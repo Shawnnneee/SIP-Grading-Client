@@ -2,6 +2,22 @@ $(document).ready(function () {
     centerTop('.login-container');
     fullHeight();
     foorterHB();
+
+    var initial = $('.sip-g-menu-header').text();
+    $('.sip-g-menu-header').click(function () {
+        if($('.sip-g-menu-header').text() == initial){
+            $('.sip-g-menu-header').fadeOut(100,function () {
+                $('.sip-g-menu-header').text('No Day But Today!');
+                $('.sip-g-menu-header').fadeIn(100);
+            });
+
+        }else{
+            $('.sip-g-menu-header').fadeOut(100,function () {
+                $('.sip-g-menu-header').text(initial);
+                $('.sip-g-menu-header').fadeIn(100);
+            });
+        }
+    });
 });
 
 $(window).resize(function () {

@@ -1,0 +1,12 @@
+RewriteEngine on
+
+# Redirect /index.php to / (optional, but recommended I guess)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php
+RewriteRule ^index.php/?(.*)$ $1 [R=301,L]
+
+# Run everything else but real files through index.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^?]*)$ /SIP-Grading-Client/Test-API-Server/index.php?q=$1 [NC,L,QSA]
+
+ErrorDocument 404 /SIP-Grading-Client/Test-API-Server/index.php?url=%{REQUEST_URI}

@@ -1,0 +1,22 @@
+[
+  {
+    "staffid": 1,
+    "username": "JohnCena",
+    "permssn": "Admin"
+  },
+  {
+    "staffid": 2,
+    "username": "ChengKai",
+    "permssn": "Staff"
+  },
+  {
+    "staffid": 3,
+    "username": "PatrickLee",
+    "permssn": "Staff"
+  },
+  {
+    "staffid": 4,
+    "username": "ShawnLim",
+    "permssn": "Staff"
+  }
+]

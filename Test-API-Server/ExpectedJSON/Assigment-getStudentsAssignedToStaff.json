@@ -1,0 +1,26 @@
+{
+    "staffid": 1,
+    "students": [
+        {
+            "studid": 1,
+            "name": "John Tan",
+            "adminno": "130222A",
+            "studentImage": "#",
+            "assigmentID": 2
+        },
+        {
+            "studid": 3,
+            "name": "Tommas Toh",
+            "adminno": "130212A",
+            "studentImage": "#",
+            "assigmentID": 4
+        },
+        {
+            "studid": 4,
+            "name": "Ben Toh",
+            "adminno": "130998D",
+            "studentImage": "#",
+            "assigmentID": 5
+        }
+    ]
+}
