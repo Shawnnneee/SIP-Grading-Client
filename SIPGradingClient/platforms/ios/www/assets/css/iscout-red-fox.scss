@@ -12,6 +12,24 @@ $input-default-color : #E8E8E8;
 $input-active-color : #C933FF;
 $default-blue: #4580FF;
 
+*
+{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input
+{
+  -webkit-user-select: auto !important;
+  -khtml-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
 @media screen and (max-width: 760px) {
   .rfs-hide-mobile {
     display: none;
@@ -294,7 +312,6 @@ body{
 }
 
 .rfs-drawer-button{
-  width: 50px;
   height: 50px !important;
   background-color: inherit;
   font-size:1.5em;
@@ -402,8 +419,8 @@ body{
 
 /*List View*/
 .list-view-container{
-  margin-left:50px;
-  margin-right:50px;
+  margin-left:25px;
+  margin-right:25px;
   margin-bottom:25px;
   margin-top:25px;
   background-color:#FFFFFF;
@@ -533,9 +550,9 @@ body{
   font-size:1.5em;
   color:#787878;
 
-  -webkit-transition: all .5s ease-out;
-  -moz-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  transition: all .1s ease-out;
 }
 
 .lv-item-menu>a{
@@ -579,6 +596,15 @@ body{
 
 .list-view-container>.lv-main-container:not(:last-child)>.lv-item{
   border-bottom: 1px solid #F5F5F5;
+}
+
+.lv-main-container{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 

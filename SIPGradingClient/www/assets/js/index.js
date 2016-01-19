@@ -13,11 +13,14 @@ $(document).ready(function () {
 
     //When user clicks on a student
     $(document).on('click','.assignment-id',function () {
-        console.log($(this).attr('data-assignment-id'));
+        var assignmentID = $(this).attr('data-assignment-id');
+        
+
     });
 });
 
 function loadStudentsAssignedToStaff(){
+    console.log("Loading List of Students");
     if(!ajaxRunning){
         ajaxRunning = true;
         $('.lv-main-container').html("").remove();

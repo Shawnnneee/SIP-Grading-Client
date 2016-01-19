@@ -68,9 +68,49 @@ class API_Datalink {
           "dip" => "Game Design",
           "assignmentID" => 5
         ),
+        array(
+            "studid" => 5,
+            "name" => "Jesmond Heng",
+            "adminno" => "1309298D",
+            "studentImage" =>  $this->APIURL."images/user-image-default.png",
+            "dip" => "Game Design",
+            "assignmentID" => 6
+        ),
+        array(
+            "studid" => 6,
+            "name" => "Patrick Lee",
+            "adminno" => "1303298D",
+            "studentImage" =>  $this->APIURL."images/user-image-default-2.png",
+            "dip" => "Media Design",
+            "assignmentID" => 7
+        )
       )
     );
     return $assignment;
   }
+
+    public function GetMarkingSchemeByAssignmentID($asid){
+        $markingScheme = array(
+            "MarkingSchemeID" => 1,
+            "AssignmentID" => intVal($asid),
+            "ComponentAssigned" => array(
+                array(
+                    "Name" => "Student Performance",
+                    "Description" => "This component assesses the student's performance during the internship",
+                    "Min" => 0,
+                    "Max" => 10,
+                    "Weightage" => 0.2 //20%
+                ),
+                array(
+                    "Name" => "Derivables",
+                    "Description" => "This component assesses the project submitted",
+                    "Min" => 0,
+                    "Max" => 20,
+                    "Weightage" => 0.4 //40%
+                )
+            )
+        );
+        return $markingScheme;
+    }
 }
 ?>

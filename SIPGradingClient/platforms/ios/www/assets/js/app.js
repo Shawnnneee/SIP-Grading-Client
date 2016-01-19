@@ -19,8 +19,6 @@ var sipGrading = {
         }
     },
     ajaxHelper : function ajaxHelper(url, method, data, successCallBack) {
-        console.log(data);
-        console.log("sipGradingObject : ");
         var callbackData;
         return $.ajax({
             type: method,
@@ -34,7 +32,7 @@ var sipGrading = {
                 }else{
                     return callbackData;
                 }
-                console.log("sipGradingObject : "+returnData);
+
             },
             error : function (jqXHR, textStatus, errorThrown){
                 console.error(errorThrown);

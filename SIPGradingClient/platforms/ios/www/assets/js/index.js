@@ -14,10 +14,13 @@ $(document).ready(function () {
     //When user clicks on a student
     $(document).on('click','.assignment-id',function () {
         console.log($(this).attr('data-assignment-id'));
+        navigator.notification.alert($(this).attr('data-assignment-id'));
+        navigator.notification.beep(10);
     });
 });
 
 function loadStudentsAssignedToStaff(){
+    console.log("Loading List of Students");
     if(!ajaxRunning){
         ajaxRunning = true;
         $('.lv-main-container').html("").remove();
@@ -32,7 +35,7 @@ function loadStudentsAssignedToStaff(){
                 tmp = tmp.replace("[{index-stud-adminno}]",studentObject[x].adminno);
                 tmp = tmp.replace("[{index-stud-image}]",studentObject[x].studentImage);
                 tmp = tmp.replace("[{index-stud-dip}]",studentObject[x].dip);
-                tmp = tmp.replace("[{index-assignment-id}]",studentObject[x].assigmentID);
+                tmp = tmp.replace("[{index-assignment-id}]",studentObject[x].assignmentID);
                 $('.stud-assignment-lv').append(tmp);
 
             }

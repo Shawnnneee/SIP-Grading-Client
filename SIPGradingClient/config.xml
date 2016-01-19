@@ -16,4 +16,8 @@
     <content src="index.html" />
     <access origin="*" />
     <icon src="res/appicon.png" />
+    <preference name="DisallowOverscroll" value="true" />
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
 </widget>

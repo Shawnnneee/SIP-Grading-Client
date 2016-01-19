@@ -54,6 +54,8 @@ class RFS_API{
                 $this->_return($dataLink->getStudentsAssignedToStaff(@$_GET['staffID']));
               }
 
+            }else if($args[1] == "GetMarkingSchemeByAssignmentID"){
+              $this->_return($dataLink->GetMarkingSchemeByAssignmentID(@$_GET['assignmentID']));
             }
 
             else{

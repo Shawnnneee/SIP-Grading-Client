@@ -18,9 +18,7 @@ var sipGrading = {
             permissions : 0
         }
     },
-    ajaxHelper : function ajaxHelper(url, method, data, successCallBack) {
-        console.log(data);
-        console.log("sipGradingObject : ");
+    ajaxHelper : function ajaxHelper(url, method, data, successCallBack, errorCallBack) {
         var callbackData;
         return $.ajax({
             type: method,
@@ -34,10 +32,14 @@ var sipGrading = {
                 }else{
                     return callbackData;
                 }
-                console.log("sipGradingObject : "+returnData);
+
             },
             error : function (jqXHR, textStatus, errorThrown){
                 console.error(errorThrown);
+
+                if(typeof errorCallBack != "undefined"){
+                    errorCallBack(jqXHR, textStatus, errorThrown);
+                }
             }
         });
     }

@@ -2,6 +2,7 @@ $(document).ready(function () {
     centerTop('.login-container');
     fullHeight();
     foorterHB();
+    FastClick.attach(document.body);
 
     var initial = $('.sip-g-menu-header').text();
     $('.sip-g-menu-header').click(function () {
