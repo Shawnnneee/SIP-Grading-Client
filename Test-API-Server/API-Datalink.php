@@ -46,23 +46,26 @@ class API_Datalink {
       "students" => array(
         array(
           "studid" => 1,
-          "name" => "John Tan",
+          "name" => "Bobby Tan",
           "adminno" => "130222A",
-          "studentImage" => "#",
+          "studentImage" => "http://192.168.1.6/SIP-Grading-Client/Test-API-Server/images/user-image-default-4.png",
+          "dip" => "Infomation Technology",
           "assigmentID" => 2
         ),
         array(
           "studid" => 3,
           "name" => "Tommas Toh",
           "adminno" => "130212A",
-          "studentImage" => "#",
+          "studentImage" => "http://192.168.1.6/SIP-Grading-Client/Test-API-Server/images/user-image-default.png",
+          "dip" => "Psychology Studies",
           "assigmentID" => 4
         ),
         array(
           "studid" => 4,
           "name" => "Ben Toh",
           "adminno" => "130998D",
-          "studentImage" => "#",
+          "studentImage" => "http://192.168.1.6/SIP-Grading-Client/Test-API-Server/images/user-image-default-3.png",
+          "dip" => "Game Design",
           "assigmentID" => 5
         ),
       )

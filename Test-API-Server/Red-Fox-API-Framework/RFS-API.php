@@ -19,7 +19,7 @@ class RFS_API{
     $config = new RFS_API_Config();
 
     if($config->allowCORS){
-      $this->addHeader("Access-Control-Allow-Orgin: *");
+      $this->addHeader("Access-Control-Allow-Origin: *");
       $this->addHeader("Access-Control-Allow-Methods: *");
     }
     $this->addHeader("X-API-Server: iScout by Red Fox Scouts API Server");
@@ -48,7 +48,7 @@ class RFS_API{
               }else{
                 $this->_return($dataLink->getAllStaff());
               }
-            }else if($args[1] == "MarkingSchemeAssigment"){
+            }else if($args[1] == "MarkingSchemeAssignment"){
 
               if(@$_GET['staffID']){
                 $this->_return($dataLink->getStudentsAssignedToStaff(@$_GET['staffID']));

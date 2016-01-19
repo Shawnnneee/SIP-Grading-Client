@@ -3,23 +3,26 @@
     "students": [
         {
             "studid": 1,
-            "name": "John Tan",
+            "name": "Daryl Tan",
             "adminno": "130222A",
-            "studentImage": "#",
+            "studentImage": "http://localhost/SIP-Grading-Client/Test-API-Server/images/user-image-default-4.png",
+            "dip": "Infomation Technology",
             "assigmentID": 2
         },
         {
             "studid": 3,
             "name": "Tommas Toh",
             "adminno": "130212A",
-            "studentImage": "#",
+            "studentImage": "http://localhost/SIP-Grading-Client/Test-API-Server/images/user-image-default.png",
+            "dip": "Psychology Studies",
             "assigmentID": 4
         },
         {
             "studid": 4,
             "name": "Ben Toh",
             "adminno": "130998D",
-            "studentImage": "#",
+            "studentImage": "http://localhost/SIP-Grading-Client/Test-API-Server/images/user-image-default-3.png",
+            "dip": "Game Design",
             "assigmentID": 5
         }
     ]
