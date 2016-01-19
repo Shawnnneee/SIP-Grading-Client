@@ -1,6 +1,6 @@
 <?php
 class API_Datalink {
-
+  public $APIURL = "http://192.168.1.25/SIP-Grading-Client/Test-API-Server/";
   /*STAFF Controller*/
   public function getAllStaff(){
     $staff = array(
@@ -41,36 +41,36 @@ class API_Datalink {
 
   public function getStudentsAssignedToStaff($staffID){
 
-    $assigment = array(
+    $assignment = array(
       "staffid" => intval($staffID),
       "students" => array(
         array(
           "studid" => 1,
           "name" => "Bobby Tan",
           "adminno" => "130222A",
-          "studentImage" => "http://192.168.1.6/SIP-Grading-Client/Test-API-Server/images/user-image-default-4.png",
-          "dip" => "Infomation Technology",
-          "assigmentID" => 2
+          "studentImage" => $this->APIURL."images/user-image-default-4.png",
+          "dip" => "Information Technology",
+          "assignmentID" => 2
         ),
         array(
           "studid" => 3,
           "name" => "Tommas Toh",
           "adminno" => "130212A",
-          "studentImage" => "http://192.168.1.6/SIP-Grading-Client/Test-API-Server/images/user-image-default.png",
+          "studentImage" =>  $this->APIURL."images/user-image-default.png",
           "dip" => "Psychology Studies",
-          "assigmentID" => 4
+          "assignmentID" => 4
         ),
         array(
           "studid" => 4,
           "name" => "Ben Toh",
           "adminno" => "130998D",
-          "studentImage" => "http://192.168.1.6/SIP-Grading-Client/Test-API-Server/images/user-image-default-3.png",
+          "studentImage" =>  $this->APIURL."images/user-image-default-3.png",
           "dip" => "Game Design",
-          "assigmentID" => 5
+          "assignmentID" => 5
         ),
       )
     );
-    return $assigment;
+    return $assignment;
   }
 }
 ?>

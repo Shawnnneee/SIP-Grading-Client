@@ -15,4 +15,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <icon src="res/appicon.png" />
 </widget>
