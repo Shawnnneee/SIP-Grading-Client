@@ -22,9 +22,10 @@ var sipGrading = {
         var callbackData;
         return $.ajax({
             type: method,
-            url: config.apiEndPoint+url,
+            url: config.apiEndPoint()+url,
             dataType: 'json',
             data: (data ? data : ""),
+            //timeout: 5000,
             success : function (returnData){
                 callbackData = returnData;
                 if(typeof successCallBack != "undefined"){
@@ -39,6 +40,9 @@ var sipGrading = {
 
                 if(typeof errorCallBack != "undefined"){
                     errorCallBack(jqXHR, textStatus, errorThrown);
+                }else{
+                    //window.location = "offline.html";
+                    $("html").load("offline.html");
                 }
             }
         });

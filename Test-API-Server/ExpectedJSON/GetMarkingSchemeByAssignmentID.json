@@ -1,0 +1,37 @@
+{
+  "Student": {
+    "studid": 6,
+    "name": "Patrick Lee",
+    "adminno": "1303298D",
+    "studentImage": "http://192.168.1.25/SIP-Grading-Client/Test-API-Server/images/user-image-default-2.png",
+    "dip": "Media Design"
+  },
+  "MarkingSchemeID": 1,
+  "AssignmentID": 1,
+  "ComponentAssigned": [
+    {
+      "Id": 1,
+      "Name": "Student Performance",
+      "Description": "This component assesses the student's performance during the internship",
+      "Min": 0,
+      "Max": 10,
+      "Weightage": 0.2
+    },
+    {
+      "Id": 2,
+      "Name": "Derivables",
+      "Description": "This component assesses the project submitted",
+      "Min": 0,
+      "Max": 20,
+      "Weightage": 0.488
+    },
+    {
+      "Id": 3,
+      "Name": "Report",
+      "Description": "Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+      "Min": 0,
+      "Max": 5,
+      "Weightage": 0.2
+    }
+  ]
+}

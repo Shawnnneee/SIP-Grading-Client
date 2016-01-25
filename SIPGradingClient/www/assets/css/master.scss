@@ -103,3 +103,66 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+
+.offline-page-title{
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 300;
+  color: #616161;
+}
+
+.offline-page{
+  text-align: center;
+  margin-top:50px;
+}
+
+.assessment-container{
+  margin-top:25px;
+  margin-bottom:25px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.student-info{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.student-info{
+  font-size: 1.1em;
+}
+
+.marking-scheme-item{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.marking-scheme-title{
+  font-size:1.3em;
+  font-weight: 300;
+  color:#363636;
+}
+
+.marking-scheme-description{
+
+}
+
+.marking-scheme-slider-header{
+  font-size:1.2em;
+  font-weight: 300;
+  color:#363636;
+}
+
+.marking-scheme-slider{
+  margin-top:10px;
+}
+
+.marking-scheme-remarks{
+  margin-top:10px;
+}
+
+.marking-scheme-item:not(:last-child){
+  padding-bottom:10px;
+  border-bottom:1px dashed #E6E6E6;
+}

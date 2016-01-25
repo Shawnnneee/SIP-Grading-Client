@@ -91,10 +91,18 @@ class API_Datalink {
 
     public function GetMarkingSchemeByAssignmentID($asid){
         $markingScheme = array(
+            "Student" => array(
+                "studid" => 6,
+                "name" => "Patrick Lee",
+                "adminno" => "1303298D",
+                "studentImage" =>  $this->APIURL."images/user-image-default-2.png",
+                "dip" => "Media Design",
+            ),
             "MarkingSchemeID" => 1,
             "AssignmentID" => intVal($asid),
             "ComponentAssigned" => array(
                 array(
+                    "Id" => 1,
                     "Name" => "Student Performance",
                     "Description" => "This component assesses the student's performance during the internship",
                     "Min" => 0,
@@ -102,11 +110,20 @@ class API_Datalink {
                     "Weightage" => 0.2 //20%
                 ),
                 array(
+                    "Id" => 2,
                     "Name" => "Derivables",
                     "Description" => "This component assesses the project submitted",
                     "Min" => 0,
                     "Max" => 20,
-                    "Weightage" => 0.4 //40%
+                    "Weightage" => 0.488 //48.8%
+                ),
+                array(
+                    "Id" => 3,
+                    "Name" => "Report",
+                    "Description" => "Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+                    "Min" => 0,
+                    "Max" => 5,
+                    "Weightage" => 0.20 //20%
                 )
             )
         );

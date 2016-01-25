@@ -6,6 +6,8 @@ $(document).ready(function () {
 
     ajaxRunning = false;
 
+    console.log("Index.js is Running!");
+
     //Load the students info
     template = "<div class=\"lv-main-container \">"+$('.index-stud-container').html()+"</div>";
     $('.index-stud-container').remove();
@@ -13,9 +15,9 @@ $(document).ready(function () {
 
     //When user clicks on a student
     $(document).on('click','.assignment-id',function () {
-        console.log($(this).attr('data-assignment-id'));
-        navigator.notification.alert($(this).attr('data-assignment-id'));
-        navigator.notification.beep(10);
+        var assignmentID = $(this).attr('data-assignment-id');
+        console.log(assignmentID);
+        window.location = "assessment.html#/assessment/"+assignmentID;
     });
 });
 

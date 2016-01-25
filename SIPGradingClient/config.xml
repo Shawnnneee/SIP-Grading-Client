@@ -20,4 +20,12 @@
     <feature name="Notification">
         <param name="ios-package" value="CDVNotification" />
     </feature>
+    <platform name="ios">
+        <splash src="res/Default-736h@3x~iphone.png" width="1242" height="2280"/>
+        <splash src="res/Default-667h@2x~iphone.png" width="750" height="1334"/>
+        <splash src="res/Default-568h@2x~iphone.png" width="640" height="1136"/>
+        <splash src="res/Default@2x~iphone.png" width="640" height="960"/>
+        <splash src="res/Default~iphone.png" width="320" height="480"/>
+
+    </platform>
 </widget>
