@@ -14,6 +14,13 @@ $default-blue: #4580FF;
 $input-text-default: #8F8F8F;
 $input-text-active: #383838;
 
+$notify-success-bg: #0CA644;
+$notify-success-border: #097D33;
+$notify-fail-bg: #D92356;
+$notify-fail-border: #AD1F47;
+$notify-info-bg: #3461C9;
+$notify-info-border: #264EAB;
+
 *
 {
   -webkit-user-select: none;
@@ -58,7 +65,7 @@ textarea,input{
 
 
 *:focus{
-  outline:none;
+  outline:none!important;
 }
 
 body{
@@ -280,6 +287,7 @@ body{
 
 .rfs-modal-content{
   z-index: 101;
+  position: fixed;
   background-color:#FFFFFF;
   margin-left: auto;
   margin-right: auto;
@@ -305,6 +313,8 @@ body{
   padding-right: 25px;
   padding-top: 25px;
   padding-bottom: 10px;
+  position: fixed;
+  width:100%;
 }
 
 .rfs-modal-lg>.rfs-modal-content{
@@ -359,7 +369,8 @@ body{
 
 .page-content{
   padding-top:55px;
-  overflow: scroll;
+  max-height: 100%;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -574,6 +585,24 @@ body{
   font-size:0.8em;
 }
 
+.lv-meta>li.lv-meta-i-info{
+  background-color: $notify-info-bg;
+  border-color: $notify-info-border;
+  color: #FFFFFF;
+}
+
+.lv-meta>li.lv-meta-i-success{
+  background-color: $notify-success-bg;
+  border-color: $notify-success-border;
+  color: #FFFFFF;
+}
+
+.lv-meta>li.lv-meta-i-primary{
+  background-color: #6B51A6;
+  border-color: #6639a6;
+  color: #FFFFFF;
+}
+
 .lv-item-menu{
   /*float:right;*/
   position:absolute;
@@ -645,6 +674,16 @@ body{
   user-select: none;
 }
 
+.lv-badge{
+  font-size: 0.8em;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: $notify-info-bg;
+  color: #FFFFFF;
+}
+
 /*Profile*/
 .rfs-profile-image{
   text-align: center;
@@ -690,6 +729,10 @@ body{
   @include animate-simple(all,0.5s);
 }
 
+.rfs-forms-textarea:not(:focus){
+  overflow: hidden;
+}
+
 .rfs-forms-textarea:focus{
   border-bottom: 1px solid #BA89FA;
   color: $input-text-active;
@@ -699,8 +742,8 @@ body{
 .noUi-horizontal{
   margin-top:5px;
   border:none;
-  background-color: #108F73;
   height: 8px;
+  background-color: #DEDEDE;
   border-radius: 0;
   box-shadow: none;
 }
@@ -715,7 +758,7 @@ body{
   width: 25px;
   border: none;
   background-color: #D10D75;
-  box-shadow: none;
+  @include drop-shadow();
   border-radius: 100%;
   left:0px;
   right:-17px;
@@ -788,6 +831,117 @@ input[type=number]::-webkit-outer-spin-button {
   font-size:0.7em;
   color: #FC3564;
 }
+
+/*Buttons*/
+.rfs-forms-lg-submit{
+  width:100%;
+  border-radius: 0;
+}
+
+.rfs-forms-submit{
+  margin-bottom: 15px;
+}
+
+.rfs-modal-blackout{
+  position: absolute;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(000,000,000,0.8);
+  display:none;
+}
+
+/*Notify*/
+.rfs-notify-container{
+  position: fixed;
+  max-width: 60%;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  z-index: 999999;
+  border: 1px solid;
+  border-top: 0;
+  @include drop-shadow();
+  opacity: 0.9;
+  display: none;
+}
+
+.rfs-notify-animator{
+  @include animate-simple(all,0.5s);
+}
+
+.rfs-notify-container:hover{
+  opacity: 1!important;
+}
+
+.rfs-notify-content{
+  padding-left:25px;
+  padding-right:25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rfs-notify-title,.rfs-notify-text{
+  color: #FFFFFF;
+}
+
+.rfs-notify-title{
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.rfs-notify-text{
+  font-weight: 300;
+}
+
+
+.rfs-notify-content-left,.rfs-notify-content-right{
+  /*display: inline-table;*/
+}
+
+.rfs-notify-content-right{
+  margin-left: 3.8em;
+}
+
+.rfs-notify-content-left{
+  float:left;
+}
+
+.rfs-notify-content-left i{
+  font-size: 3.5em;
+  color: #FFFFFF;
+}
+
+.rfs-notify-progress{
+  height: 5px;
+  background-color: hotpink;
+  width: 100%;
+  @include animate-simple(all,0.1s);
+}
+
+.rfs-notify-fail{
+  background-color: $notify-fail-bg;
+  border-color: $notify-fail-border;
+}
+
+.rfs-notify-success{
+  background-color: $notify-success-bg;
+  border-color: $notify-success-border;
+}
+
+.rfs-notify-info{
+  background-color: $notify-info-bg;
+  border-color: $notify-info-border;
+}
+
+.rfs-notify-success .rfs-notify-progress{
+  background-color: $notify-success-border;
+}
+
 
 /*Animations*/
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }

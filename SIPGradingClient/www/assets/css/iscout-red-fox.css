@@ -28,7 +28,7 @@ textarea, input {
   .rfs-hide-desktop {
     display: none; } }
 *:focus {
-  outline: none; }
+  outline: none !important; }
 
 body {
   position: relative;
@@ -222,6 +222,7 @@ body {
 
 .rfs-modal-content {
   z-index: 101;
+  position: fixed;
   background-color: #FFFFFF;
   margin-left: auto;
   margin-right: auto;
@@ -244,7 +245,9 @@ body {
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 25px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  position: fixed;
+  width: 100%; }
 
 .rfs-modal-lg > .rfs-modal-content {
   max-width: 1000px; }
@@ -291,7 +294,8 @@ body {
 
 .page-content {
   padding-top: 55px;
-  overflow: scroll;
+  max-height: 100%;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
 
 .rfs-overlay-menu {
@@ -472,6 +476,21 @@ body {
   color: #A8A8A8;
   font-size: 0.8em; }
 
+.lv-meta > li.lv-meta-i-info {
+  background-color: #3461C9;
+  border-color: #264EAB;
+  color: #FFFFFF; }
+
+.lv-meta > li.lv-meta-i-success {
+  background-color: #0CA644;
+  border-color: #097D33;
+  color: #FFFFFF; }
+
+.lv-meta > li.lv-meta-i-primary {
+  background-color: #6B51A6;
+  border-color: #6639a6;
+  color: #FFFFFF; }
+
 .lv-item-menu {
   /*float:right;*/
   position: absolute;
@@ -528,6 +547,15 @@ body {
   -ms-user-select: none;
   user-select: none; }
 
+.lv-badge {
+  font-size: 0.8em;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #3461C9;
+  color: #FFFFFF; }
+
 /*Profile*/
 .rfs-profile-image {
   text-align: center;
@@ -566,6 +594,9 @@ body {
   -moz-transition: all 0.5s ease-out !important;
   transition: all 0.5s ease-out !important; }
 
+.rfs-forms-textarea:not(:focus) {
+  overflow: hidden; }
+
 .rfs-forms-textarea:focus {
   border-bottom: 1px solid #BA89FA;
   color: #383838; }
@@ -574,8 +605,8 @@ body {
 .noUi-horizontal {
   margin-top: 5px;
   border: none;
-  background-color: #108F73;
   height: 8px;
+  background-color: #DEDEDE;
   border-radius: 0;
   box-shadow: none; }
 
@@ -588,7 +619,7 @@ body {
   width: 25px;
   border: none;
   background-color: #D10D75;
-  box-shadow: none;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   border-radius: 100%;
   left: 0px;
   right: -17px; }
@@ -650,6 +681,100 @@ input[type=number]::-webkit-outer-spin-button {
 .rfs-forms-slider-values-current-value-editor-error-desc {
   font-size: 0.7em;
   color: #FC3564; }
+
+/*Buttons*/
+.rfs-forms-lg-submit {
+  width: 100%;
+  border-radius: 0; }
+
+.rfs-forms-submit {
+  margin-bottom: 15px; }
+
+.rfs-modal-blackout {
+  position: absolute;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none; }
+
+/*Notify*/
+.rfs-notify-container {
+  position: fixed;
+  max-width: 60%;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  z-index: 999999;
+  border: 1px solid;
+  border-top: 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  display: none; }
+
+.rfs-notify-animator {
+  -webkit-transition: all 0.5s ease-out !important;
+  -moz-transition: all 0.5s ease-out !important;
+  transition: all 0.5s ease-out !important; }
+
+.rfs-notify-container:hover {
+  opacity: 1 !important; }
+
+.rfs-notify-content {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.rfs-notify-title, .rfs-notify-text {
+  color: #FFFFFF; }
+
+.rfs-notify-title {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-bottom: 5px; }
+
+.rfs-notify-text {
+  font-weight: 300; }
+
+.rfs-notify-content-left, .rfs-notify-content-right {
+  /*display: inline-table;*/ }
+
+.rfs-notify-content-right {
+  margin-left: 3.8em; }
+
+.rfs-notify-content-left {
+  float: left; }
+
+.rfs-notify-content-left i {
+  font-size: 3.5em;
+  color: #FFFFFF; }
+
+.rfs-notify-progress {
+  height: 5px;
+  background-color: hotpink;
+  width: 100%;
+  -webkit-transition: all 0.1s ease-out !important;
+  -moz-transition: all 0.1s ease-out !important;
+  transition: all 0.1s ease-out !important; }
+
+.rfs-notify-fail {
+  background-color: #D92356;
+  border-color: #AD1F47; }
+
+.rfs-notify-success {
+  background-color: #0CA644;
+  border-color: #097D33; }
+
+.rfs-notify-info {
+  background-color: #3461C9;
+  border-color: #264EAB; }
+
+.rfs-notify-success .rfs-notify-progress {
+  background-color: #097D33; }
 
 /*Animations*/
 @-moz-keyframes spin {

@@ -23,6 +23,7 @@
     <script type="application/javascript" src="assets/js/nouislider.js"></script>
     <script type="application/javascript" src="assets/js/iscout-red-fox-mi.js?"></script>
     <script type="application/javascript" src="assets/js/iscout-red-fox-slider.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-notify.js?"></script>
     <script type="application/javascript" src="assets/js/config.js"></script>
     <script type="application/javascript" src="assets/js/app.js"></script>
     <script type="application/javascript" src="assets/js/menu.js"></script>
@@ -38,7 +39,7 @@
             </button>
         </li>
         <li>
-            <div class="rfs-header-title">Assessing: <span class="assessment-student-name">John Tan</span></div>
+            <div class="rfs-header-title">Assessing: <span class="assessment-student-name">Loading...</span></div>
         </li>
     </ul>
 </header>
@@ -53,7 +54,8 @@
                 <div class="showbox">
                     <div class="loader">
                         <svg class="circular" viewBox="25 25 50 50">
-                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2"
+                                    stroke-miterlimit="10"/>
                         </svg>
                     </div>
                 </div>
@@ -65,7 +67,65 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<div class="assessment-confirmation-modal">
+    <div class="assessment-confirmation-title">
+        Review Your Assessment
+    </div>
+    <div class="assessment-confirmation-content">
+        <div class="assessment-confirmation-content-view">
+            <div class="rfs-g rfs-card-container assessment-confirmation-content-view-a">
+                <div class="assessment-confirmation-content-view-b">
+                    <div class="assessment-confirmation-item">
+                        <div class="assessment-confirmation-item-title">
+                            Student's Performance <span class="marking-scheme-weightage">[20%]</span>
+                        </div>
+                        <div class="assessment-confirmation-content-item-grade">
+                            Your Score:
+                            <div class="assessment-confirmation-content-item-grade-box">
+                                <div class="assessment-confirmation-content-item-grade-box-score">7</div>
+                                <div class="assessment-confirmation-content-item-grade-box-max">/10</div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="assessment-confirmation-content-item-comments">
+                            <div class="assessment-confirmation-content-item-comments-title">
+                                Your Remarks:
+                            </div>
+                            In this variation, the persistent navigation drawer changes its width. Its resting state is
+                            as a mini-drawer at the same elevation as the content, clipped by the app bar. When
+                            expanded, it appears as the standard persistent navigation drawer.
+                        </div>
+                    </div>
+                </div>
+                <div class="assessment-confirmation-content-view-submission">
+                    <button class="btn btn-info rfs-forms-lg-submit assessment-save" style="width:49.5%"><i class="fa fa-floppy-o"></i> Save as Draft</button>
+                    <button class="btn btn-success rfs-forms-lg-submit assessment-submit" style="width:49.5%"><i class="fa fa-check"></i> Submit Assessment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rfs-modal-blackout assessment-submission-modal">
+    <div class="rfs-modal-main">
+        <div class="rfs-g rfs-card-container">
+            <div class="showbox">
+                <div class="loader">
+                    <svg class="circular" viewBox="25 25 50 50">
+                        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2"
+                                stroke-miterlimit="10"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="rfs-loading-text">
+                Submitting Assessment
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

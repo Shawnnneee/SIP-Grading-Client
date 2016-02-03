@@ -38,6 +38,20 @@ function loadStudentsAssignedToStaff(){
                 tmp = tmp.replace("[{index-stud-image}]",studentObject[x].studentImage);
                 tmp = tmp.replace("[{index-stud-dip}]",studentObject[x].dip);
                 tmp = tmp.replace("[{index-assignment-id}]",studentObject[x].assignmentID);
+                //assessmentSubmitted
+                if(studentObject[x].assessmentSubmitted){
+                    tmp = tmp.replace("[{index-submission-status-class}]","lv-meta-i-success");
+                    tmp = tmp.replace("[{index-submission-status}]","Submitted");
+                }else{
+                    if(localStorage.getItem("SIP-Grading-Client-Assessment-Draft-"+studentObject[x].assignmentID)){
+                        tmp = tmp.replace("[{index-submission-status-class}]","lv-meta-i-primary");
+                        tmp = tmp.replace("[{index-submission-status}]","Draft");
+                    }else{
+                        tmp = tmp.replace("[{index-submission-status-class}]","lv-meta-i-info");
+                        tmp = tmp.replace("[{index-submission-status}]","New");
+                    }
+
+                }
                 $('.stud-assignment-lv').append(tmp);
 
             }

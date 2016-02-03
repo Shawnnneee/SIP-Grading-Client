@@ -119,18 +119,6 @@ function iscout_red_fox_slider(){
 function iscout_red_fox_slider_change(target,value){
     //var this_  = document.getElementById(target);
 
-    var backgroundTransitionColor = {
-        from : {
-            red : 222,
-            green : 222,
-            blue : 222
-        },
-        to : {
-            red : 16,
-            green : 143,
-            blue : 115
-        }
-    };
 
     var sliderTransitionColor = {
         from : {
@@ -139,35 +127,35 @@ function iscout_red_fox_slider_change(target,value){
             blue : 117
         },
         to : {
-            red : 17,
-            green : 185,
-            blue : 148
+            red : 0,
+            green : 197,
+            blue : 135
         }
     };
 
-    var currentPercentage = (value/(parseInt($("#"+target).attr('data-max')) / parseInt($("#"+target).attr('data-min'))) );
-
-
-    var changeBackground = {
-        red : backgroundTransitionColor.from.red - (Math.abs(backgroundTransitionColor.to.red - backgroundTransitionColor.from.red) * currentPercentage) ,
-        green : backgroundTransitionColor.from.green - (Math.abs(backgroundTransitionColor.to.green - backgroundTransitionColor.from.green) * currentPercentage),
-        blue :  backgroundTransitionColor.from.blue - (Math.abs(backgroundTransitionColor.to.blue - backgroundTransitionColor.from.blue) * currentPercentage)
-    };
+    var currentPercentage = (value/(parseInt($("#"+target).attr('data-max')) - parseInt($("#"+target).attr('data-min'))) );
 
     var changeSlider = {
-        red : sliderTransitionColor.from.red - (Math.abs(sliderTransitionColor.to.red - sliderTransitionColor.from.red) * currentPercentage) ,
-        green : sliderTransitionColor.from.green + (Math.abs(sliderTransitionColor.to.green - sliderTransitionColor.from.green) * currentPercentage),
-        blue :  sliderTransitionColor.from.blue + (Math.abs(sliderTransitionColor.to.blue - sliderTransitionColor.from.blue) * currentPercentage)
+        red : calculateFinalColor(sliderTransitionColor.from.red, sliderTransitionColor.to.red,currentPercentage) ,
+        green : calculateFinalColor(sliderTransitionColor.from.green, sliderTransitionColor.to.green,currentPercentage),
+        blue :  calculateFinalColor(sliderTransitionColor.from.blue, sliderTransitionColor.to.blue,currentPercentage)
     };
-    //console.log(changeBackground);
 
-    var parsedBackground = 'rgba('+parseInt(changeBackground.red)+','+parseInt(changeBackground.green)+','+parseInt(changeBackground.blue)+',1)';
+    function calculateFinalColor(from,to,percentage){
+        var value = 0;
+        if(from>to){
+            value = from - ((from - to)*percentage);
+        }else{
+            value = from + ((to - from)*percentage);
+        }
+        return value;
+    }
+
     var parsedSlider = 'rgba('+parseInt(changeSlider.red)+','+parseInt(changeSlider.green)+','+parseInt(changeSlider.blue)+',1)';
-    $('#'+target).css('background-color',parsedBackground);
+    console.log(parsedSlider);
     $('#'+target).find('.noUi-handle').css('background-color',parsedSlider);
-    console.log(parsedBackground);
-
 
     var valueTrimmed = value.toString().split('.')[0];
-    $("#"+target).parent().find('.rfs-forms-slider-values-current-value').text(valueTrimmed);
+    $(this).parent().removeAttr('data-is-editing');
+    $("#"+target).parent().find('.rfs-forms-slider-values-current').html("<span class=\"rfs-forms-slider-values-current-value\">"+valueTrimmed+"</span>");
 }

@@ -1,6 +1,6 @@
 <?php
 class API_Datalink {
-  public $APIURL = "http://192.168.1.25/SIP-Grading-Client/Test-API-Server/";
+  public $APIURL = "http://localhost/SIP-Grading-Client/Test-API-Server/";
   /*STAFF Controller*/
   public function getAllStaff(){
     $staff = array(
@@ -50,7 +50,8 @@ class API_Datalink {
           "adminno" => "130222A",
           "studentImage" => $this->APIURL."images/user-image-default-4.png",
           "dip" => "Information Technology",
-          "assignmentID" => 2
+          "assignmentID" => 2,
+          "assessmentSubmitted" => false
         ),
         array(
           "studid" => 3,
@@ -58,7 +59,8 @@ class API_Datalink {
           "adminno" => "130212A",
           "studentImage" =>  $this->APIURL."images/user-image-default.png",
           "dip" => "Psychology Studies",
-          "assignmentID" => 4
+          "assignmentID" => 4,
+          "assessmentSubmitted" => true
         ),
         array(
           "studid" => 4,
@@ -66,7 +68,8 @@ class API_Datalink {
           "adminno" => "130998D",
           "studentImage" =>  $this->APIURL."images/user-image-default-3.png",
           "dip" => "Game Design",
-          "assignmentID" => 5
+          "assignmentID" => 5,
+          "assessmentSubmitted" => false
         ),
         array(
             "studid" => 5,
@@ -74,7 +77,8 @@ class API_Datalink {
             "adminno" => "1309298D",
             "studentImage" =>  $this->APIURL."images/user-image-default.png",
             "dip" => "Game Design",
-            "assignmentID" => 6
+            "assignmentID" => 6,
+            "assessmentSubmitted" => false
         ),
         array(
             "studid" => 6,
@@ -82,7 +86,8 @@ class API_Datalink {
             "adminno" => "1303298D",
             "studentImage" =>  $this->APIURL."images/user-image-default-2.png",
             "dip" => "Media Design",
-            "assignmentID" => 7
+            "assignmentID" => 7,
+            "assessmentSubmitted" => false
         )
       )
     );

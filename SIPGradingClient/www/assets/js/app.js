@@ -15,7 +15,9 @@ var sipGrading = {
     },
     getCurrentUserInfo : function(){
         return {
-            permissions : 0
+            userID : 1,
+            permissions : 0,
+
         }
     },
     ajaxHelper : function ajaxHelper(url, method, data, successCallBack, errorCallBack) {
@@ -24,7 +26,7 @@ var sipGrading = {
             type: method,
             url: config.apiEndPoint()+url,
             dataType: 'json',
-            data: (data ? data : ""),
+            data: (data ? JSON.stringify(data) : ""),
             //timeout: 5000,
             success : function (returnData){
                 callbackData = returnData;

@@ -56,6 +56,8 @@ class RFS_API{
 
             }else if($args[1] == "GetMarkingSchemeByAssignmentID"){
               $this->_return($dataLink->GetMarkingSchemeByAssignmentID(@$_GET['assignmentID']));
+            }else if($args[1] == "SubmitAssessmentScheme"){
+              $this->_return(array ("STATUS"=>"OK"));
             }
 
             else{

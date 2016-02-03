@@ -5,7 +5,7 @@ class RFS_API_Config{
   public $allowCORS = true;
   //public $allowedMethods = array("POST","GET","PUT","DELETE");
 
-  public $allowedMethods = array("GET");
+  public $allowedMethods = array("POST","GET");
 
   public $HTTPstatus = array(  
               200 => 'OK',
