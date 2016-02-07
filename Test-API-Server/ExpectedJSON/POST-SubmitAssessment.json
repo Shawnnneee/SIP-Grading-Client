@@ -1,0 +1,21 @@
+{
+"AssignmentID": "4",
+"UserID": 1,
+"Components": [
+{
+"componentID": 1,
+"score": 8,
+"remarks": "Remarks 1234"
+},
+{
+"componentID": 2,
+"score": 14,
+"remarks": "Remarks<br />1234<br />1234"
+},
+{
+"componentID": 3,
+"score": 5,
+"remarks": ""
+}
+]
+}

@@ -77,8 +77,9 @@ function submitAssessment(){
         UserID : sipGrading.getCurrentUserInfo().userID,
         Components : compileAssessmentComponents(true)
     };
+    console.log(JSON.stringify(submitAssessmentModel));
     sipGrading.ajaxHelper("SubmitAssessmentScheme","POST",submitAssessmentModel,function (data) {
-        window.location = "index.html";
+        //window.location = "index.html";
     });
 }
 
@@ -113,7 +114,7 @@ function compileAssessmentComponents(breaklinesConvert){
         assessmentComponent.score = parseInt($(this).find(".rfs-forms-slider-values-current-value").text());
         assessmentComponent.remarks = $(this).find('.rfs-forms-textarea').val().replace(/(<([^>]+)>)/ig,"");
         if(breaklinesConvert){
-            assessmentComponent.remarks = assessmentComponent.remarks.replace(/(?:\r\n|\r|\n)/g, '<br />')
+            assessmentComponent.remarks = assessmentComponent.remarks.replace(/(?:\r\n|\r|\n)/g, '<br />');
         }
         //console.log(assessmentComponent);
         assessmentComponentCompiled.push(assessmentComponent);

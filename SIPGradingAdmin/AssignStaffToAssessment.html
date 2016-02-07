@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Student Internship Grading Module</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=0" /-->
+    <meta name="DC.rights" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US/"/>
+
+    <link rel="stylesheet" href="assets/css/normalize.css"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:100,400,300,700,900"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/nouislider.css"/>
+    <link rel="stylesheet" href="assets/css/iscout-loading.css"/>
+    <link rel="stylesheet" href="assets/css/iscout-red-fox.css"/>
+    <link rel="stylesheet" href="assets/css/master.css"/>
+
+    <script type="application/javascript" src="cordova.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.2.1.3.min.js"></script>
+    <script type="application/javascript" src="assets/js/fastclick.js"></script>
+    <script type="application/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="assets/js/nouislider.js"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-mi.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-slider.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-notify.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-autocomplete.js?"></script>
+    <script type="application/javascript" src="assets/js/config.js"></script>
+    <script type="application/javascript" src="assets/js/app.js"></script>
+    <script type="application/javascript" src="assets/js/menu.js"></script>
+    <script type="application/javascript" src="assets/js/master.js"></script>
+    <script type="application/javascript" src="assets/js/assignStaffToAssessment.js"></script>
+</head>
+<body>
+<header class="rfs-header">
+    <ul>
+        <li>
+            <button class="rfs-drawer-button" style="width:50px;" onClick="window.location='index.html'">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+        </li>
+        <li>
+            <div class="rfs-header-title">Assign Staff to Marking Scheme Component</div>
+        </li>
+    </ul>
+</header>
+<div class="page-content">
+    <div class="page-content-header">
+
+    </div>
+    <div class="rfs-page-single-paper-container">
+        <div class="rfs-page-single-paper">
+            <div class="rfs-page-single-paper-header">
+                Select Student
+            </div>
+            <div class="assessment-scheme-create-container">
+                <div class="assessment-scheme-create-header">
+                    <div class="rfs-input-lg-gp">
+                        <input type="text" class="rfs-input-lg-gp-input-lg assessment-assignemnt-studentName" placeholder="Enter Student's Name"/>
+                    </div>
+                    <div class="rfs-input-lg-gp">
+                        <input type="text" class="rfs-input-lg-gp-input-lg" placeholder="Assessment Scheme"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rfs-page-single-paper assessment-component-master">
+            <div class="rfs-page-single-paper-header">
+                Assessment Components
+            </div>
+            <div class="assessment-scheme-create-container component-create-container">
+                <div class="assessment-component-container">
+                    <div class="rfs-input-lg-gp">
+                        <div class="rfs-input-lg-gp-input-lg">Component 1 Name [20%]</div>
+                    </div>
+                    <div class="rfs-input-gp">
+                        Description 1234567890
+                    </div>
+
+                    <div class="assessment-component-assigned">
+                        Currently assigned to this component
+                        <ul>
+                            <li>Tan Ah Kao</li>
+                            <li>Tan Ah Kao</li>
+                        </ul>
+                    </div>
+
+                    <div class="rfs-input-gp">
+                        <input type="text" class="rfs-forms-input rfs-required-field staff-name" placeholder="Start Typing a Staff Name"/>
+                        <!--div class="rfs-autocomplete">
+                            <ul class="rfs-autocomplete-results">
+                                <li>Tah Ah Kao</li>
+                                <li>Lim Cheng Kai</li>
+                                <li>Patrick Lee</li>
+                                <li>Daryl Tan</li>
+                                <li>Hilmi</li>
+                            </ul>
+                        </div-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <button class="rfs-btn-m rfs-btn-m-green rfs-btn-m-full create-assessment-scheme-btn">Create Assessment Scheme</button>
+        <div style="width:100%;height:50px"></div>
+    </div>
+</div>
+
+</body>
+</html>
