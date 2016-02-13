@@ -30,9 +30,12 @@
     <header class="rfs-header">
         <ul>
             <li>
-                <button class="rfs-drawer-button" style="visibility: hidden;width:10px;">
+                <button class="rfs-drawer-button dropdown-toggle" type="button" data-toggle="dropdown" style="width:50px;">
                     <i class="fa fa-bars"></i>
                 </button>
+                <ul class="dropdown-menu">
+                    <li><a href="Logout.html">Logout</a></li>
+                </ul>
             </li>
             <li><div class="rfs-header-title">Select a Student</div></li>
         </ul>
@@ -53,7 +56,7 @@
 
     <div class="lv-main-container index-stud-container">
 
-      <div class="lv-item assignment-id" data-assignment-id="[{index-assignment-id}]">
+      <div class="lv-item assignment-id" data-assignment-id="[{index-assignment-id}]" data-assessment-sumitted="[{data-assessment-sumitted}]">
         <div class="lv-photo-container">
           <img src="[{index-stud-image}]" />
             <div class="lv-item-title">

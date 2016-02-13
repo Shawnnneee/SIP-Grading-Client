@@ -29,52 +29,16 @@
     <script type="application/javascript" src="assets/js/app.js"></script>
     <script type="application/javascript" src="assets/js/menu.js"></script>
     <script type="application/javascript" src="assets/js/master.js"></script>
-    <script type="application/javascript" src="assets/js/assignStaffToAssessment.js"></script>
+    <script type="application/javascript">
+        $(document).ready(function () {
+            localStorage.removeItem("login_token");
+            window.location = 'login.html';
+        });
+    </script>
 </head>
 <body>
-<header class="rfs-header">
-    <ul>
-        <li>
-            <button class="rfs-drawer-button" style="width:50px;" onClick="window.location='index.html'">
-                <i class="fa fa-arrow-left"></i>
-            </button>
-        </li>
-        <li>
-            <div class="rfs-header-title">Assign Staff to Marking Scheme Component</div>
-        </li>
-    </ul>
-</header>
-<div class="page-content">
-    <div class="page-content-header">
 
-    </div>
-    <div class="rfs-page-single-paper-container">
-        <div class="rfs-page-single-paper">
-            <div class="rfs-page-single-paper-header">
-                Information
-            </div>
-            <div class="assessment-scheme-create-container err-show">
-                <div class="assessment-scheme-create-header">
-                    <div class="rfs-input-lg-gp">
-                        <input type="text" class="rfs-input-lg-gp-input-lg assessment-assignment-studentName" placeholder="Loading..." readonly="readonly"/>
-                    </div>
-                    <div class="rfs-input-lg-gp">
-                        <input type="text" class="rfs-input-lg-gp-input-lg assessment-assignment-msname" placeholder="Loading..." readonly="readonly"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="rfs-page-single-paper assessment-component-maste err-showr">
-            <div class="rfs-page-single-paper-header">
-                Assessment Components
-            </div>
-            <div class="assessment-assignment-container component-create-container">
-            </div>
-        </div>
-        <button class="rfs-btn-m rfs-btn-m-green rfs-btn-m-full submit-assessment-submit">Assign Assessment Scheme</button>
-        <div style="width:100%;height:50px"></div>
-    </div>
-</div>
+Please Wait
 
 </body>
 </html>

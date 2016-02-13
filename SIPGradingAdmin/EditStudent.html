@@ -29,7 +29,7 @@
     <script type="application/javascript" src="assets/js/app.js"></script>
     <script type="application/javascript" src="assets/js/menu.js"></script>
     <script type="application/javascript" src="assets/js/master.js"></script>
-    <script type="application/javascript" src="assets/js/assignStaffToAssessment.js"></script>
+    <script type="application/javascript" src="assets/js/editStudent.js"></script>
 </head>
 <body>
 <header class="rfs-header">
@@ -40,7 +40,7 @@
             </button>
         </li>
         <li>
-            <div class="rfs-header-title">Assign Staff to Marking Scheme Component</div>
+            <div class="rfs-header-title">View Students</div>
         </li>
     </ul>
 </header>
@@ -51,28 +51,40 @@
     <div class="rfs-page-single-paper-container">
         <div class="rfs-page-single-paper">
             <div class="rfs-page-single-paper-header">
-                Information
+                Editing: <span class="edit-student-name-display"></span>
             </div>
-            <div class="assessment-scheme-create-container err-show">
-                <div class="assessment-scheme-create-header">
-                    <div class="rfs-input-lg-gp">
-                        <input type="text" class="rfs-input-lg-gp-input-lg assessment-assignment-studentName" placeholder="Loading..." readonly="readonly"/>
-                    </div>
-                    <div class="rfs-input-lg-gp">
-                        <input type="text" class="rfs-input-lg-gp-input-lg assessment-assignment-msname" placeholder="Loading..." readonly="readonly"/>
-                    </div>
+
+            <div class="rfs-input-gp" style="float:right;margin-right: 25px;margin-top:-40px;">
+                <button class="rfs-btn-m rfs-btn-m-red rfs-btn-m-large student-delete-button">Delete Student</button>
+            </div>
+
+            <div class="assessment-scheme-create-container component-create-container err-show">
+                <div class="rfs-input-lg-gp">
+                    <input type="text" class="rfs-input-lg-gp-input-lg rfs-required-field edit-student-name" placeholder="Name"/>
                 </div>
+
+                <div class="rfs-input-gp">
+                    <input type="text" class="rfs-forms-input rfs-required-field edit-student-dip" placeholder="Diploma" />
+                </div>
+
+                <div class="rfs-input-gp">
+                    <input type="text" class="rfs-forms-input rfs-required-field edit-student-adminno" placeholder="Admission Number" />
+                </div>
+
+                <div class="rfs-input-gp">
+                    <select style="width:100%;font-size:1.2em;font-weight:300" class="edit-student-markingscheme marking-scheme-select" disabled="disabled">
+                    <option>Loading</option>
+                </select>
+                </div>
+
+
+
+
             </div>
         </div>
-        <div class="rfs-page-single-paper assessment-component-maste err-showr">
-            <div class="rfs-page-single-paper-header">
-                Assessment Components
-            </div>
-            <div class="assessment-assignment-container component-create-container">
-            </div>
-        </div>
-        <button class="rfs-btn-m rfs-btn-m-green rfs-btn-m-full submit-assessment-submit">Assign Assessment Scheme</button>
-        <div style="width:100%;height:50px"></div>
+
+        <button class="rfs-btn-m rfs-btn-m-green rfs-btn-m-full update-student">Update Student</button>
+
     </div>
 </div>
 

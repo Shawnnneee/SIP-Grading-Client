@@ -6,6 +6,13 @@ var componentModel = {
     Max : 0,
     Weightage : 0.00
 }
+
+var assessmentMarkingSchemeModal = {
+    mschemeid : 0,
+    createdby : 0,
+    name : "",
+    mscheme : ""
+}
 var assessmentComponentTemplate;
 $(document).ready(function () {
     assessmentComponentTemplate = "<div class=\"assessment-component-container\">"+$(".assessment-component-container").html()+"<div class=\"rfs-input-gp\" style=\"text-align: right;\"><button class=\"rfs-btn-m rfs-btn-m-red create-component-delete\"><i class=\"fa fa-trash\"></i></button></div></div>";
@@ -102,7 +109,32 @@ $(document).ready(function () {
                 componentObjectArray.push(tmp);
                 count++;
             });
+
+            var isValid = true;
+
+            $('body').find('.rfs-required-field').each(function () {
+                if($(this).val() == ""){
+                    $(this).addClass("rfs-forms-input-has-error");
+                    $(this).parent().find(".rfs-validation-error").remove();
+                    $(this).parent().append('<div class="rfs-validation-error">This is a Required Field!</div>');
+                    $(this).parent().find(".rfs-validation-error").css('display','block');
+                    isValid = false;
+                }else{
+                    $(this).removeClass("rfs-forms-input-has-error");
+                    $(this).parent().find(".rfs-validation-error").remove();
+                }
+            });
+
             var componentJSON = JSON.stringify(componentObjectArray);
+
+            var ajaxPOST = Object.create(assessmentMarkingSchemeModal);
+            ajaxPOST.createdby = 1;
+            ajaxPOST.mscheme = componentJSON;
+            ajaxPOST.name = $('.assessment-name').val();
+            console.log(JSON.stringify(ajaxPOST));
+            sipGrading.ajaxHelper('markingscheme/','POST',ajaxPOST,function (data){
+                window.location = 'index.html?message='+encodeURIComponent("Successfully Created Assessment Scheme!");
+            });
         }
 
     });

@@ -16,36 +16,21 @@ $(document).ready(function () {
 
        return false;
     });
-
-    $('.branding-logo').click(function () {
-        console.log("Changing");
-        $('.login-background-container').css('background-image','url(assets/images/bg.jpg)');
-    });
 });
 
 function validateLogin(username,password){
-    //Simualted login
-    var loginEndpoint = "login.ajax.php";
-    $.ajax({
-        url: loginEndpoint,
-        type: "POST",
-        data: "username="+username+"&password="+password+"",
-        dataType: "JSON",
-        success: function (data){
-            if(data.success == "true"){
-                alert("Login Success!");
-            }else{
-                $('.login-loading-container').delay(1000).fadeOut(300,function () {
-                    $('.login-feedback').css("display","block");
-                    $('.login-form-elements').fadeIn(300,function () {
-
-                    });
+    sipGrading.ajaxHelper('login?input_username='+username+'&input_password='+password,'POST','',function (data){
+        if(data){
+            sipGrading.ajaxHelper('staff/?username='+username,'GET','',function (data){
+                localStorage.setItem("login_token",sipGrading.base64_encode(JSON.stringify(data)));
+                window.location = 'index.html';
+            });
+        }else{
+            $('.login-loading-container').delay(1000).fadeOut(300, function() {
+                $('.login-feedback').css("display", "block");
+                $('.login-form-elements').fadeIn(300, function() {
                 });
-
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown);
+            });
         }
     });
 }

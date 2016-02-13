@@ -5,6 +5,9 @@
   -ms-user-select: none;
   user-select: none; }
 
+@media print {
+  .rfs-header {
+    display: none; } }
 input, textarea {
   -webkit-user-select: auto !important;
   -khtml-user-select: auto !important;
@@ -435,6 +438,10 @@ body {
   font-weight: 300;
   color: #818181; }
 
+.lv-title-larger {
+  font-size: 1.5em;
+  font-weight: 300; }
+
 .lv-header {
   background-color: #F8F8F8;
   padding-top: 10px;
@@ -507,6 +514,9 @@ body {
 .lv-meta {
   margin-left: -40px; }
 
+.lv-meta > li:not(:last-child) {
+  margin-right: 5px; }
+
 .lv-meta > li {
   display: inline-table;
   border: 1px solid #EDEDED;
@@ -536,7 +546,7 @@ body {
 .lv-item-menu {
   /*float:right;*/
   position: absolute;
-  top: 0;
+  top: 30px;
   right: 25px;
   padding-left: 10px;
   padding-right: 10px;
@@ -894,6 +904,37 @@ input[type=number]::-webkit-outer-spin-button {
 
 .rfs-autocomplete-results li:hover {
   background-color: #D7D3F2; }
+
+/*Table*/
+.rfs-table {
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+.rfs-table thead tr {
+  border-bottom: 1px solid #D4D4D4;
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #696969; }
+
+.rfs-table tbody tr {
+  color: #474747;
+  -webkit-transition: all 0.5s ease-out !important;
+  -moz-transition: all 0.5s ease-out !important;
+  transition: all 0.5s ease-out !important; }
+
+.rfs-table-hover tbody tr:hover {
+  background-color: #FDFAFF; }
+
+.rfs-table tbody tr {
+  border-bottom: 1px solid #D4D4D4; }
+
+.rfs-table thead tr td, .rfs-table tbody tr td, .rfs-table tfoot tr td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px; }
 
 /*Animations*/
 @-moz-keyframes spin {

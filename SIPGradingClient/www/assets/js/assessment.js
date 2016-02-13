@@ -75,11 +75,11 @@ function submitAssessment(){
     var submitAssessmentModel = {
         AssignmentID : assessment,
         UserID : sipGrading.getCurrentUserInfo().userID,
-        Components : compileAssessmentComponents(true)
+        Components : JSON.stringify(compileAssessmentComponents(true))
     };
     console.log(JSON.stringify(submitAssessmentModel));
-    sipGrading.ajaxHelper("SubmitAssessmentScheme","POST",submitAssessmentModel,function (data) {
-        //window.location = "index.html";
+    sipGrading.ajaxHelper("assignment","PUT",submitAssessmentModel,function (data) {
+        window.location = "index.html?submitted=true";
     });
 }
 
@@ -161,12 +161,13 @@ function getAssessmentScheme(assessmentID){
     if(!ajaxRunning){
         ajaxRunning = true;
         console.log("[INFO] Getting Assessment Scheme of "+assessmentID);
-        sipGrading.ajaxHelper("GetMarkingSchemeByAssignmentID?assignmentID="+assessmentID,"GET","",function (data) {
+        sipGrading.ajaxHelper("assignment?assignid="+assessmentID,"GET","",function (data) {
             var assessmentTemplate = "";
-
+            console.log(data);
             assessmentTemplate += " <div class=\"col-md-4\">";
             assessmentTemplate += " <div class=\"student-info\">";
-            assessmentTemplate += "<div class=\"rfs-profile-image\"><img src=\""+data.Student.studentImage+"\" /></div>";
+            //assessmentTemplate += "<div class=\"rfs-profile-image\"><img src=\""+data.Student.studentImage+"\" /></div>";
+            assessmentTemplate += "<div class=\"rfs-profile-image\"><img src=\"http://sipgradingapi.mjrredfox.org/images/user-image-default.png\" /></div>";
             assessmentTemplate += "<div class=\"rfs-profile-info\">";
 
             assessmentTemplate += "<div class=\"rfs-profile-line\">";
@@ -179,7 +180,7 @@ function getAssessmentScheme(assessmentID){
             assessmentTemplate += "<div class=\"rfs-profile-line\">";
             assessmentTemplate += "<dl>";
             assessmentTemplate += "<dt>Admission Number</dt>";
-            assessmentTemplate += "<dd>"+data.Student.adminno+"</dd>";
+            assessmentTemplate += "<dd>"+data.Student.matricno+"</dd>";
             assessmentTemplate += "</dl>";
             assessmentTemplate += "</div>";
 
@@ -203,7 +204,7 @@ function getAssessmentScheme(assessmentID){
                 assessmentTemplate += "<div class=\"marking-scheme-item\" data-component-id=\""+component.Id+"\">";
                 assessmentTemplate += "<div class=\"marking-scheme-title\">";
                 assessmentTemplate += (x + 1)+". "+component.Name+" ";
-                assessmentTemplate += "<span class=\"marking-scheme-weightage\">["+parseFloat(component.Weightage * 100)+"%]</span> ";
+                assessmentTemplate += "<span class=\"marking-scheme-weightage\">["+component.Weightage+"%]</span> ";
                 assessmentTemplate += "</div>";
                 assessmentTemplate += "<div class=\"marking-scheme-description\">";
                 assessmentTemplate += component.Description;

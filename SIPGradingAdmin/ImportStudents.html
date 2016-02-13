@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Student Internship Grading Module</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi, user-scalable=0" /-->
+    <meta name="DC.rights" scheme="DCTERMS.URI" content="http://creativecommons.org/licenses/by-sa/4.0/deed.en_US/"/>
+
+    <link rel="stylesheet" href="assets/css/normalize.css"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:100,400,300,700,900"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="assets/css/nouislider.css"/>
+    <link rel="stylesheet" href="assets/css/iscout-loading.css"/>
+    <link rel="stylesheet" href="assets/css/iscout-red-fox.css"/>
+    <link rel="stylesheet" href="assets/css/master.css"/>
+
+    <script type="application/javascript" src="cordova.js"></script>
+    <script type="application/javascript" src="assets/js/jquery.2.1.3.min.js"></script>
+    <script type="application/javascript" src="assets/js/fastclick.js"></script>
+    <script type="application/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="application/javascript" src="assets/js/nouislider.js"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-mi.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-slider.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-notify.js?"></script>
+    <script type="application/javascript" src="assets/js/iscout-red-fox-autocomplete.js?"></script>
+    <script type="application/javascript" src="assets/js/config.js"></script>
+    <script type="application/javascript" src="assets/js/app.js"></script>
+    <script type="application/javascript" src="assets/js/menu.js"></script>
+    <script type="application/javascript" src="assets/js/master.js"></script>
+    <script type="application/javascript" src="assets/js/importStudent.js"></script>
+</head>
+<body>
+<header class="rfs-header">
+    <ul>
+        <li>
+            <button class="rfs-drawer-button" style="width:50px;" onClick="window.location='index.html'">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+        </li>
+        <li>
+            <div class="rfs-header-title">Import Students</div>
+        </li>
+    </ul>
+</header>
+<div class="page-content">
+    <div class="page-content-header">
+
+    </div>
+    <div class="rfs-page-single-paper-container">
+        <div class="rfs-page-single-paper">
+            <div class="rfs-page-single-paper-header">
+                Marking Scheme
+            </div>
+            <div class="assessment-scheme-create-container">
+                <div>
+                    <select style="width:100%;font-size:1.2em;font-weight:300" class="marking-scheme-select" disabled="disabled">
+                        <option>Loading</option>
+                    </select>
+                </div><br />
+                <div>
+                    Note: You will need to create a marking scheme <strong>first</strong> before assigning it to students
+                </div>
+            </div>
+        </div>
+        <div class="rfs-page-single-paper assessment-component-master">
+            <div class="rfs-page-single-paper-header">
+                Import Students
+            </div>
+            <div class="assessment-assignment-container component-create-container">
+
+                <div class="import-select-method">
+                    Select your import method:<br />
+                    <button class="rfs-btn-m rfs-btn-m-large rfs-btn-m-w-blue import-upload" style="font-size:1.5em;">Upload</button>
+                    <button class="rfs-btn-m rfs-btn-m-large rfs-btn-m-w-blue import-type" style="font-size:1.5em;">Type</button><br />
+                    <small><strong>*Note* Please upload files according to <a href="#">this</a> format!</strong></small>
+                    <input type="file" id="import-student-upload" style="display:none;" accept="text/csv"/>
+                </div>
+
+                <div class="import-type-container" style="display:none;">
+                    <div style="font-size:1.3em;font-weight:300;">
+                        Edit Student Details
+                    </div>
+                    <table class="rfs-table import-type-table">
+                        <thead>
+                            <tr>
+                                <td style="width:35%">Student Name</td>
+                                <td style="width:30%">Diploma</td>
+                                <td style="width:30%">Admission Number</td>
+                                <td style="width:5%"></td>
+                            </tr>
+                        </thead>
+                        <tbody class="import-type-body">
+                            <tr class="import-type-single">
+                                <td><input type="text" class="rfs-forms-input student-name rfs-required-field" placeholder="Student Name"/></td>
+                                <td><input type="text" class="rfs-forms-input student-dip rfs-required-field" placeholder="Diploma"/></td>
+                                <td><input type="text" class="rfs-forms-input student-adminno rfs-required-field" placeholder="Admission Number"/></td>
+                                <td><button class="rfs-btn-m rfs-btn-m-red import-type-student-delete"><i class="fa fa-times"></i></button></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"><button class="rfs-btn-m rfs-btn-m-large rfs-btn-m-w-blue rfs-btn-m-full input-type-add-student">Add Student</button></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <button class="rfs-btn-m rfs-btn-m-green rfs-btn-m-full import-student-submit">Assign Assessment Scheme</button>
+        <div style="width:100%;height:50px"></div>
+    </div>
+</div>
+
+</body>
+</html>

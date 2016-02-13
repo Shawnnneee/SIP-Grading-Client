@@ -126,4 +126,116 @@ body {
 .assessment-component-assigned {
   margin-top: 10px; }
 
+.assessment-component-assigned ul {
+  padding-left: 20px; }
+
+.assignment-staff-delete {
+  color: #ED6F6F; }
+
+.assignment-staff-delete:before {
+  content: " [x]"; }
+
+.import-select-method {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.import-type-container {
+  margin-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.import-type-table tbody tr td input:not(:focus) {
+  border-color: transparent; }
+
+.list-student-info {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px; }
+
+.edit-staff-warning {
+  display: block;
+  border: 1px solid #FAB9CB;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #F05B85;
+  color: #FFFFFF;
+  font-weight: 300; }
+
+.results-container {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 20px;
+  margin-bottom: 15px; }
+
+.results-container-student-info {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6; }
+
+.results-container-student-info table tr td {
+  font-size: 1.3em;
+  font-weight: 500; }
+
+.results-container-student-info table tr td:not(:first-child) {
+  padding-left: 25px;
+  font-weight: 300; }
+
+.results-components-container {
+  margin-top: 10px; }
+
+.header {
+  font-size: 1.5em;
+  font-weight: 300; }
+
+.component-title {
+  font-size: 1.3em;
+  font-weight: 300; }
+
+.results-average {
+  margin-top: 10px;
+  font-size: 1.2em; }
+
+.result-average-number {
+  font-weight: 300; }
+
+.scores-container {
+  margin-top: 15px; }
+
+.scores-container table tr td {
+  border: 1px solid #E6E6E6;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.scores-container table {
+  width: 100%; }
+
+.scores-header {
+  font-size: 1.3em;
+  font-weight: 300; }
+
+.scores-staff-name {
+  width: 30%; }
+
+.score-not-submitted {
+  color: #E84676; }
+
+.results-components-single {
+  margin-top: 15px; }
+
+.score-not-submitted:after {
+  content: "Score not submitted!"; }
+
+.results-container-single {
+  margin-top: 25px;
+  margin-bottom: 25px; }
+
+.results-container-single {
+  page-break-before: always; }
+
 /*# sourceMappingURL=master.css.map */
